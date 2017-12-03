@@ -37,9 +37,9 @@ function sendDataText() {
 			percentage = percentage*100;
 			alert(percentage)
 			alert(data)
-			if (data.indexOf("Joy"") != 0) {
+			if (data.indexOf("Joy") != 0) {
 				newUrl = "joy.html/perc=" +  percentage
-			} else if (data.indexOf("Neutral"") != 0) {
+			} else if (data.indexOf("Neutral") != 0) {
 				newUrl = "neutral.html/perc=" +  percentage
 			} else if (data.indexOf("Anger") != 0) {
 				newUrl = "anger.html/perc=" +  percentage

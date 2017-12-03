@@ -258,17 +258,6 @@ function w3_open() {
 function w3_close() {
     mySidebar.style.display = "none";
 }
-
-if (getUrlParams("perc") == null) 
-{
-	alert("oops, something went wrong serverside");
-} 
-else 
-{
-	var percentage = getUrlParams("perc") + "%";
-	document.getElementById("percentage").innerHtml = percentage;
-	document.getElementById("percentage").style = "width:" + percentage;
-}
 </script>
 
 </body>
