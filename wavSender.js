@@ -1,9 +1,18 @@
+function sleep (time) {
+  return new Promise((resolve) => setTimeout(resolve, time));
+}
+
 function sendDataFile() {
 	var payload = null
 	var file = document.getElementById("uploadBtn").files[0]
 	if (file && file.name.lastIndexOf(".wav") == file.name.length-4) { 
 		var reader = new FileReader();
-		payload  = btoa(reader.readAsBinaryString(file))
+		reader.readAsBinaryString(file)
+		while(reader.readyState != 2) {
+				sleep(500)
+		}
+		alert(reader.result)
+		payload  = btoa(reader.result)
 		alert(payload)
 	}
 	if (payload != null) {
