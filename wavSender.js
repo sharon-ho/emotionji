@@ -1,31 +1,31 @@
-function sleep (time) {
-  return new Promise((resolve) => setTimeout(resolve, time));
-}
-
+var payload = null
 function sendDataFile() {
-	var payload = null
+	$('#WavInput').change(function(){
+    var frm = new FormData();
+    frm.append('WavInput', document.getElementById("uploadBtn").files[0])
+    $.ajax({
+        method: 'POST',
+        address: 'https://github.com/niko378/',
+        data: frm,
+        contentType: false,
+        processData: false,
+        cache: false
+    });
+	});
+	/*var payload = null*/
 	var file = document.getElementById("uploadBtn").files[0]
 	if (file && file.name.lastIndexOf(".wav") == file.name.length-4) { 
-		var reader = new FileReader();
+	/*	var reader = new FileReader();
 		reader.readAsBinaryString(file)
-		while(reader.readyState != 2) {
-				sleep(500)
-		}
-		alert(reader.result)
-		payload  = btoa(reader.result)
-		alert(payload)
 	}
 	if (payload != null) {
 		var text = "{\"type\":1," + 
 			"\"file\":\"" + payload + "\"}";
 		alert(text)
-		var obj = JSON.parse(text) 
+		var obj = JSON.parse(text) */
 		jQuery.ajax({
-			url: '/Postman Interceptor',
-			data: { 
-				obj
-			},
-			dataType: 'json'
+			url: 'https://immense-lowlands-49222.herokuapp.com/yhackss17/1/',
+			data: 'https://github.com/niko378/'
 		});
 		return true;
 	} else {
