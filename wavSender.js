@@ -25,7 +25,7 @@ function sendDataFile() {
 		var obj = JSON.parse(text) */
 		jQuery.ajax({
 			url: 'https://immense-lowlands-49222.herokuapp.com/yhackss17/1/',
-			data: 'https://github.com/niko378/'
+			data: 'https:$$github.com$niko378$'
 		});
 		return true;
 	} else {
@@ -36,14 +36,14 @@ function sendDataFile() {
 
 function sendDataText() {
     jQuery.ajax({
-        url: 'https://immense-lowlands-49222.herokuapp.com/yhackss17/1/' + document.getElementById("textToUpload").value,
-		success: function(data) {
-			var newUrl = "react.html?" + data;
-            document.location.href = newUrl;
-        },
-        error: function() {
+	url: 'https://immense-lowlands-49222.herokuapp.com/yhackss17/1/' + document.getElementById("textToUpload").value,
+	success: (function(data) {
+			var newUrl = "react.html?" + data
+            document.location.href = newUrl
+        }),
+    error: (function() {
             alert('Error occured');
 			return false;
-        }
+        })
     });
 }
